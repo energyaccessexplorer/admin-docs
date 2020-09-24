@@ -165,13 +165,22 @@
 
       <pre>
 {
-  "timeline": false,
+  "boundaries_name": "Subcounty",
+
+  "timeline": true,
+
+  "timeline_dates": [
+    "2020-10-31",
+    "2021-10-31",
+    "2022-10-31"
+  ],
 
   "flag": {
     "x": -4,
     "y": 0,
     "width": 24,
-    "height": 16
+    "height": 16,
+    "aspect-ratio": "none"
   },
 
   "sort_branches": [
@@ -195,21 +204,35 @@
 }
       </pre>
 
+	  <p>
+		<attr>boundaries_name</attr> - The name to use for the administrative
+		boundary (eg. Province or State)
+	  </p>
+
+      <p>
+        <attr>timeline</attr> sets the variant of the tool to timeline
+        (eg. India) if <code>true</code>. Else, the default variant (eg. Africa)
+        is used.
+      </p>
+
+      <p>
+        <attr>timeline_dates</attr> a list of dates (formatted
+        as <code>YYYY-MM-DD</code>) for the tool to consider when data from the
+        <code>timeline-indicator</code> datasets CSV's files. This
+        requires <attr>timeline</attr> to be <code>true</code>.
+      </p>
+
       <p>
         <attr>flag</attr> given the proportions and aethetics of flags of
         different countries, each requires to be scaled (<code>width</code>
         and <code>height</code>) or centered (<code>x</code> and <code>y</code>)
-        differently. These values are empirical and depend on taste. See
-        different country geographies for examples on the CMS and the results on
-        the
+        differently. Lastly <code>aspect-ratio</code> can also be configured and
+        defaults to <code>none</code> (explained
+		<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio">here</a>),
+        These values are empirical and depend on taste. See different country
+        geographies for examples on the CMS and the results on the
         <a href="https://www.energyaccessexplorer.org/tool/s/">select screen</a>.
         This only applies for geographies <code>adm0</code>.
-      </p>
-
-      <p>
-        <attr>timeline</attr> sets the variant of the tool to timeline (India)
-        if <code>true</code>. If <code>false</code> or unspecified, the default
-        variant (Africa) is used.
       </p>
 
       <p>
@@ -422,11 +445,6 @@
           <!-- TODO: check this -->
           <attr>dasharray</attr>
           It does not apply to <em>points</em>.
-        </p>
-
-        <p>
-          <!-- TODO: check this -->
-          <attr>specs</attr>
         </p>
       </section>
 
@@ -659,7 +677,19 @@
       </p>
 
       <p>
-        <attr>configuration</attr> WIP <!-- TODO: check this -->
+        <attr>configuration</attr> of a file may include:
+
+		<ul>
+		  <li>
+			<code>column</code> - The name of the CSV column that will be used to
+			match the GEOJSON feature (see <code>file->configuration->key</code>)
+		  </li>
+
+		  <li>
+			<code>column_name</code> - The name of the CSV column which contains
+			the "human readable version" of the feature
+		  </li>
+		</ul>
       </p>
 
       <p>
@@ -694,7 +724,16 @@
       </p>
 
       <p>
-        <attr>configuration</attr> WIP <!-- TODO: check this -->
+		<attr>Configuration</attr> of a file is a <i>JSON document</i>
+		optionally containing:
+
+		<ul>
+		  <li>
+			<code>key</code> - an identifier in the GEOJSON that
+			references to a unique value in a column of the CSV
+			(see <code>dataset->configuration->column</code>)
+		  </li>
+		</ul>
       </p>
     </section>
 
