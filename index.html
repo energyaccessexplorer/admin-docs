@@ -166,10 +166,9 @@
         </pre>
       </details>
 
-      <p>
-        <attr>Configuration</attr> of a geography is a <i>JSON document</i>
-        which visual and/or functional aspects on the tool. Consider the
-        following <i>JSON object</i>:
+      <p attr="configuration">
+        of a geography is a <i>JSON document</i> which visual and/or functional
+        aspects on the tool. Consider the following <i>JSON object</i>:
       </p>
 
       <pre>
@@ -213,30 +212,27 @@
 }
       </pre>
 
-      <p>
-        <attr>boundaries_name</attr> The name to use for the administrative
-        boundary (eg. Province or State)
+      <p attr="boundaries_name">
+        The name to use for the administrative boundary (eg. Province or State)
       </p>
 
-      <p>
-        <attr>timeline</attr> sets the variant of the tool to timeline
-        (eg. India) if <code>true</code>. Else, the default variant (eg. Africa)
-        is used.
+      <p attr="timeline">
+        sets the variant of the tool to timeline (eg. India)
+        if <code>true</code>. Else, the default variant (eg. Africa) is used.
       </p>
 
-      <p>
-        <attr>timeline_dates</attr> a list of dates (formatted
-        as <code>YYYY-MM-DD</code>) for the tool to consider when data from the
-        <code>timeline-indicator</code> datasets CSV's files. This
-        requires <attr>timeline</attr> to be <code>true</code>.
+      <p attr="timeline_dates">
+        a list of dates (formatted as <code>YYYY-MM-DD</code>) for the tool to
+        consider when data from the <code>timeline-indicator</code> datasets CSV's
+        files. This requires <attr>timeline</attr> to be <code>true</code>.
       </p>
 
-      <p>
-        <attr>flag</attr> given the proportions and aethetics of flags of
-        different countries, each requires to be scaled (<code>width</code>
-        and <code>height</code>) or centered (<code>x</code> and <code>y</code>)
-        differently. Lastly <code>aspect-ratio</code> can also be configured and
-        defaults to <code>none</code> (explained
+      <p attr="flag">
+        given the proportions and aethetics of flags of different countries,
+        each requires to be scaled (<code>width</code> and <code>height</code>)
+        or centered (<code>x</code> and <code>y</code>) differently. Lastly,
+        <code>aspect-ratio</code> can also be configured and defaults to
+        <code>none</code> (explained
         <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio">here</a>),
         These values are empirical and depend on taste. See different country
         geographies for examples on the CMS and the results on the
@@ -244,22 +240,21 @@
         This only applies for geographies <code>adm0</code>.
       </p>
 
-      <p>
-        <attr>sort_branches</attr> sets how the specified branches are shown
-        first on the tool's <i>control panel</i>. The rest of the branches'
-        order is not guaranteed.
+      <p attr="sort_branches">
+        sets how the specified branches are shown first on the tool's
+        <i>control panel</i>. The rest of the branches' order is not guaranteed.
       </p>
 
-      <p>
-        <attr>sort_subbranches</attr> sets how the specified subbranches are shown
-        first on the tool's <i>control panel</i>. The rest of the subbranches'
-        order is not guaranteed.
+      <p attr="sort_subbranches">
+        sets how the specified subbranches are shown first on the
+        tool's <i>control panel</i>. The rest of the subbranches' order is not
+        guaranteed.
       </p>
 
-      <p>
-        <attr>sort_datasets</attr> sets how the specified categories (by name)
-        are shown first on the tool's <i>control panel</i>. The rest of the
-        datasets' order is not guaranteed.
+      <p attr="sort_datasets">
+        sets how the specified categories (by name) are shown first on the
+        tool's <i>control panel</i>. The rest of the datasets' order is not
+        guaranteed.
       </p>
 
       <p>
@@ -279,11 +274,10 @@
         all <i>datasets</i> that inherit from them.
       </p>
 
-      <p>
-        <attr>color_stops</attr> define a scale at which different values
-        within <attr>domain</attr> of a dataset. These will be used for a
-        category's <b>Raster</b> or <b>CSV</b> configuration depending on the
-        usage case.
+      <p attr="color_stops">
+        define a scale at which different values within <attr>domain</attr> of a
+        dataset. These will be used for a category's <b>Raster</b> or <b>CSV</b>
+        configuration depending on the usage case.
       </p>
 
       <p>
@@ -325,16 +319,16 @@
       <section id="category-raster">
         <h3>Raster (heatmap)</h3>
 
-        <p>
-          <attr>scale</attr> refers to the function used to distribute the domain
-          over the <attr>color_stops</attr>.
+        <p attr="scale">
+          refers to the function used to distribute the domain over
+          the <attr>color_stops</attr>.
         </p>
 
-        <p>
-          <attr>intervals</attr> is an array of numbers encapsulating
-          the <attr>color_stops</attr> so they are <i>plus one</i> of them.  In
-          order for this to have any effect, <attr>scale</attr> needs to be set
-          to <i>intervals</i>. In our example: 9 colors, 10 intervals.
+        <p attr="intervals">
+          is an array of numbers encapsulating the <attr>color_stops</attr> so
+          they are <i>plus one</i> of them.  In order for this to have any
+          effect, <attr>scale</attr> needs to be set to <i>intervals</i>. In our
+          example: 9 colors, 10 intervals.
         </p>
 
         <pre>
@@ -396,63 +390,53 @@
           </g>
         </svg>
 
-        <p>
-          <attr>precision</attr>
+        <p attr="precision">
         </p>
 
-        <p>
-          <attr>domain</attr> consists of two values <attr>min</attr>
-          and <attr>max</attr>. To avoid complications, the raster information
-          should not exceede these values.
+        <p attr="domain">
+          consists of two values <attr>min</attr> and <attr>max</attr>. To avoid
+          complications, the raster information should not exceede these values.
         </p>
 
-        <p>
-          <attr>init</attr> is the initialisation values
-          (<attr>min</attr>, <attr>max</attr>) within <attr>domain</attr> for the
-          category inside the tool. The user will be able to then change these
-          values during their analysis.
+        <p attr="init">
+          is the initialisation values (<attr>min</attr>, <attr>max</attr>)
+          within <attr>domain</attr> for the category inside the tool. The user
+          will be able to then change these values during their analysis.
         </p>
       </section>
 
       <section id="category-vectors">
         <h3>Vectors</h3>
 
-        <p>
-          <attr>shape_type</attr> specifies one
-          of <em>points</em>, <em>polygons</em> or <em>lines</em>.
+        <p attr="shape_type">
+          specifies one of <em>points</em>, <em>polygons</em> or <em>lines</em>.
         </p>
 
-        <p>
-          <attr>fill</attr> the inner color of the shape. It does not apply
-          to <em>lines</em>.
+        <p attr="fill">
+          the inner color of the shape. It does not apply to <em>lines</em>.
         </p>
 
-        <p>
-          <attr>opacity</attr> the transparency factor of the shape (0 is fully
-          transparent and 1 is fully opaque).
+        <p attr="opacity">
+          the transparency factor of the shape (0 is fully transparent and 1 is
+          fully opaque).
         </p>
 
-        <p>
-          <attr>stroke</attr> the color of the shape's outline.
+        <p attr="stroke">
+          the color of the shape's outline.
         </p>
 
-        <p>
-          <!-- TODO: check this -->
-          <attr>stroke-width</attr> the width of the shapes <attr>stroke</attr>.
-          It does not apply to <em>points</em>.
+        <p attr="stroke-width"> <!-- TODO: check this -->
+          the width of the shapes <attr>stroke</attr>. It does not apply
+          to <em>points</em>.
         </p>
 
-        <p>
-          <!-- TODO: check this -->
-          <attr>width/size</attr> is different depending on the shape:
-          The radius of the circles representing <em>points</em>
-          It does not apply to <em>lines</em>.
-          It does not apply to <em>polygons</em>.
+        <p attr="width-size"> <!-- TODO: check this -->
+          is different depending on the shape: The radius of the circles
+          representing <em>points</em> It does not apply to <em>lines</em>. It
+          does not apply to <em>polygons</em>.
         </p>
 
-        <p>
-          <!-- TODO: check this -->
-          <attr>dasharray</attr>
+        <p attr="dasharray"> <!-- TODO: check this -->
           It does not apply to <em>points</em>.
         </p>
       </section>
@@ -460,9 +444,9 @@
       <section id="category-csv">
         <h3>CSV</h3>
 
-        <p>
-          <attr>domain</attr> a <i>JSON object</i> that containing the
-		  <code>min</code> and <code>max</code> values (generally 0 and 100)
+        <p attr="domain">
+          a <i>JSON object</i> that containing the <code>min</code>
+          and <code>max</code> values (generally 0 and 100)
         </p>
       </section>
 
@@ -477,33 +461,33 @@
           An <a href="#special-eai">example</a> is the easiest way to explain.
         </p>
 
-        <p>
-          <attr>index</attr> the part of the analysis where a category
-          contributes to. It can be <code>eai</code>, <code>ani</code>,
-          <code>demand</code>, <code>supply</code> or <code>null</code>.
+        <p attr="index">
+          the part of the analysis where a category contributes to. It can
+          be <code>eai</code>, <code>ani</code>, <code>demand</code>,
+          <code>supply</code> or <code>null</code>.
         </p>
 
-        <p>
-          <attr>weight</attr> a number between 1 and 5 (defaulting to 2) setting
-          the weight/importance of the category.
+        <p attr="weight">
+          a number between 1 and 5 (defaulting to 2) setting the
+          weight/importance of the category.
         </p>
 
-        <p>
-          <attr>clamp</attr> given the current domain, how to manage the values
-          greater or lesser than the domain. If not, they are <em>clipped</em>.
+        <p attr="clamp">
+          given the current domain, how to manage the values greater or lesser
+          than the domain. If not, they are <em>clipped</em>.
           See <a href="https://github.com/d3/d3-scale#continuous_clamp">this</a>
           for a formal description.
         </p>
 
-        <p>
-          <!-- TODO: check this -->
-          <attr>invervals</attr> WIP.
+        <p attr="intervals"> <!-- TODO: check this -->
+          WIP.
         </p>
 
-        <p>
-          <attr>indexes</attr> each category can behave differently given an
-          analysis. This is an array of object describing the different scenarios.
-          Consider the following <i>JSON</i>:
+        <p attr="indexes">
+          each category can behave differently given an analysis. This is an
+          array of object describing the different scenarios.  Consider the
+          following <i>JSON</i>:
+
           <pre>
 [
   {
@@ -522,11 +506,19 @@
 
           This would imply that the raster would:
           <ol>
-            <li>Have no impact in a <code>ani</code> or <code>supply</code>
-              analysis.</li>
-            <li>Invert it's range in the analysis whilst keeping a linear scale
-              in <code>eai</code>.</li>
-            <li>Exclude the selected domain whilst on <code>supply</code>.
+            <li>
+              Have no impact in a <code>ani</code> or <code>supply</code>
+              analysis.
+            </li>
+
+            <li>
+              Invert it's range in the analysis whilst keeping a linear scale
+              in <code>eai</code>.
+            </li>
+
+            <li>
+              Exclude the selected domain whilst on <code>supply</code>.
+            </li>
           </ol>
         </p>
       </section>
@@ -534,46 +526,45 @@
       <section id="category-timeline">
         <h3>Timeline</h3>
 
-        <p>
-          WIP <!-- TODO: check this -->
+        <p> <!-- TODO: check this -->
+          WIP
         </p>
       </section>
 
       <section id="category-controls">
         <h3>Controls</h3>
 
-        <p>
-          <attr>range</attr> the amount of sliders to restrict the range of a
-          dataset. This can be one of <code>null</code>, <code>single</code> or
-          <code>double</code>.
+        <p attr="range">
+          the amount of sliders to restrict the range of a dataset. This can be
+          one of <code>null</code>, <code>single</code> or <code>double</code>.
         </p>
 
-        <p>
-          <attr>range_steps</attr> if not <code>null</code>, it sets the amount of
-          "clicks minus one" that the range of the dataset should be
-          divided <em>evenly</em> distributed into.
+        <p attr="range_steps">
+          if not <code>null</code>, it sets the amount of "clicks minus one"
+          that the range of the dataset should be divided <em>evenly</em>
+          distributed into.
         </p>
 
-        <p>
-          <attr>range_label</attr> corresponds to the words to appear unders the
-          sliders. This defaults to the dataset's unit.
+        <p attr="range_label">
+          corresponds to the words to appear unders the sliders. This defaults
+          to the dataset's unit.
         </p>
 
-        <p>
-          <attr>weight</attr> whether to enable the weight slider.
+        <p attr="weight">
+          whether to enable the weight slider.
         </p>
 
-        <p>
-          <attr>path</attr> an array that sets the "breadcrums" within the
-          datasets category tree in the controls panel.
+        <p attr="path">
+          an array that sets the "breadcrums" within the datasets category tree
+          in the controls panel.
         </p>
       </section>
 
       <section id="category-metadata">
         <h3>Metadata</h3>
 
-        <p>
-          <attr>why</attr> why? Because of reasons...
+        <p attr="why">
+          why? Because of reasons...
         </p>
       </section>
 
@@ -655,90 +646,83 @@
         geography - plus some specific attributes and a collection of files.
       </p>
 
-      <p>
-        <attr>category_id</attr> The UUID of the category describing the
-        dataset.
+      <p attr="category_id">
+        The UUID of the category describing the dataset.
       </p>
 
-      <p>
-        <attr>geography_id</attr> The UUID of the country that the dataset
-        belongs to.
+      <p attr="geography_id">
+        The UUID of the country that the dataset belongs to.
       </p>
 
-      <p>
-        <attr>name</attr> A "programmer-friendly" string that describes to
-        differentiate from other datasets that have the same category.
+      <p attr="name">
+        A "programmer-friendly" string that describes to differentiate from
+        other datasets that have the same category.
       </p>
 
-      <p>
-        <attr>name_long</attr> A "human-friendly" string which will appear to
-        the users of the tool.
+      <p attr="name_long">
+        A "human-friendly" string which will appear to the users of the tool.
       </p>
 
-      <p>
-        <attr>online</attr> If <code>false</code>, the dataset will not be
-        published on the tool.
+      <p attr="online">
+        If <code>false</code>, the dataset will not be published on the tool.
       </p>
 
-      <p>
-        <attr>circle</attr> WIP <!-- TODO: check this -->
+      <p attr="circle">
+        WIP <!-- TODO: check this -->
       </p>
 
-      <p>
-        <attr>pack</attr> WIP <!-- TODO: check this -->
+      <p attr="pack">
+        WIP <!-- TODO: check this -->
       </p>
 
-      <p>
-        <attr>configuration</attr> of a file may include:
+      <p attr="configuration">
+        of a file may include:
 
         <ul>
-          <li>
-            <code>column</code> The name of the CSV column that will be used to
-            match the GEOJSON feature <br>
-            (see <code>file -> configuration -> key</code>)
+          <li attr="column">
+            the name of the CSV column that will be used to match the GEOJSON
+            feature <br> (see <code>file -> configuration -> key</code>)
           </li>
 
-          <li>
-            <code>column_name</code> The name of the CSV column which contains
-            the "human readable version" of the feature
+          <li attr="column_name">
+            the name of the CSV column which contains the "human readable version"
+            of the feature
           </li>
         </ul>
       </p>
 
-      <p>
-        <attr>category_overrides</attr> WIP <!-- TODO: check this -->
+      <p attr="category_overrides">
+        WIP <!-- TODO: check this -->
       </p>
 
-      <p>
-        <attr>presets</attr> DEPRECATED
+      <p attr="presets">
+        DEPRECATED
       </p>
 
-      <p>
-        <attr>metadata</attr> a collection attributes about the dataset to be
-        shown in the "about this dataset" section of the tool.
+      <p attr="metadata">
+        a collection attributes about the dataset to be shown in the
+        "about this dataset" section of the tool.
       </p>
     </section>
 
     <section id="file">
       <h2>File</h2>
 
-      <p>
-        <attr>label</attr> a string to facilitate searching.
+      <p attr="label">
+        a string to facilitate searching.
       </p>
 
-      <p>
-        <attr>endpoint</attr> the complete URL where the file is located.
+      <p attr="endpoint">
+        the complete URL where the file is located.
       </p>
 
-      <p>
-        <attr>comment</attr> a summary of any relevant details about the
-        file. Whether it has been updated or any other info for the future
-        admistrators.
+      <p attr="comment">
+        a summary of any relevant details about the file. Whether it has been
+        updated or any other info for the future admistrators.
       </p>
 
-      <p>
-        <attr>Configuration</attr> of a file is a <i>JSON document</i>
-        optionally containing:
+      <p attr="configuration">
+        of a file is a <i>JSON document</i> optionally containing:
 
         <ul>
           <li>
@@ -753,27 +737,27 @@
     <section id="datasets-files">
       <h2>Datasets + Files</h2>
 
-      A single file can be assigned to several datasets. For
-      example, <code>timeline-indicator</code>s and <code>boundaries</code>
+      A single file can be assigned to several datasets. For example,
+      <code>timeline-indicator</code>s and <code>boundaries</code>
       datasets use the same polygons but different CSVs files. This association
       is done by <attr>category_id</attr> and <attr>file_id</attr>.
 
-      <p>
-        <attr>category_id</attr> the UUID of the category.
+      <p attr="category_id">
+        the UUID of the category.
       </p>
 
-      <p>
-        <attr>file_id</attr> the UUID of the file.
+      <p attr="file_id">
+        the UUID of the file.
       </p>
 
-      <p>
-        <attr>active</attr> only one file of a specific <attr>func</attr> can be
-        active at any given time. The rest are ignored
+      <p attr="active">
+        only one file of a specific <attr>func</attr> can be active at any given
+        time. The rest are ignored
       </p>
 
-      <p>
-        <attr>func</attr> can be <code>null</code>, <code>raster</code>,
-        <code>vectors</code> or <code>csv</code>
+      <p attr="func">
+        can be <code>null</code>, <code>raster</code>, <code>vectors</code>
+        or <code>csv</code>
       </p>
     </section>
 
@@ -827,6 +811,15 @@
   <script>
     (function() {
       const sol = document.querySelector('#table-contents ol');
+
+      const plis = document.querySelectorAll('p,li');
+      for (let x of plis) {
+        const a = x.getAttribute('attr'); if (a) {
+          const e = document.createElement('attr');
+          e.innerText = a;
+          x.prepend(e);
+        }
+      }
 
       const sections = document.querySelectorAll('body > section');
       for (let s of sections) {
