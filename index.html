@@ -34,7 +34,10 @@
       attr {
         font-family: monospace;
         font-weight: bold;
-        margin-right: 1em;
+      }
+
+      p > attr:first-child {
+        margin-right: 0.6em;
       }
 
       text {
@@ -46,6 +49,12 @@
         background-color: #e1e1e1;
         border-radius: 2px;
         padding: 1px 3px;
+      }
+
+      pre {
+        background-color: #f0f0f0;
+        border-radius: 2px;
+        padding: 10px 20px;
       }
 
       #back-top {
@@ -160,7 +169,7 @@
       <p>
         <attr>Configuration</attr> of a geography is a <i>JSON document</i>
         which visual and/or functional aspects on the tool. Consider the
-        following JSON object:
+        following <i>JSON object</i>:
       </p>
 
       <pre>
@@ -204,10 +213,10 @@
 }
       </pre>
 
-	  <p>
-		<attr>boundaries_name</attr> - The name to use for the administrative
-		boundary (eg. Province or State)
-	  </p>
+      <p>
+        <attr>boundaries_name</attr> The name to use for the administrative
+        boundary (eg. Province or State)
+      </p>
 
       <p>
         <attr>timeline</attr> sets the variant of the tool to timeline
@@ -228,7 +237,7 @@
         and <code>height</code>) or centered (<code>x</code> and <code>y</code>)
         differently. Lastly <code>aspect-ratio</code> can also be configured and
         defaults to <code>none</code> (explained
-		<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio">here</a>),
+        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio">here</a>),
         These values are empirical and depend on taste. See different country
         geographies for examples on the CMS and the results on the
         <a href="https://www.energyaccessexplorer.org/tool/s/">select screen</a>.
@@ -254,7 +263,7 @@
       </p>
 
       <p>
-        The above JSON object corresponds to the following configuration:
+        The above <i>JSON object</i> corresponds to the following configuration:
 
         <div style="margin: auto; text-align: center;">
           <img src="./controls-screenshot.jpeg" width="500">
@@ -452,7 +461,8 @@
         <h3>CSV</h3>
 
         <p>
-          <attr>domain</attr>
+          <attr>domain</attr> a <i>JSON object</i> that containing the
+		  <code>min</code> and <code>max</code> values (generally 0 and 100)
         </p>
       </section>
 
@@ -468,8 +478,9 @@
         </p>
 
         <p>
-          <attr>index</attr> the part of the analysis where a category contributes
-          to. It can be one of <code>eai, ani, demand, supply, null</code>
+          <attr>index</attr> the part of the analysis where a category
+          contributes to. It can be <code>eai</code>, <code>ani</code>,
+          <code>demand</code>, <code>supply</code> or <code>null</code>.
         </p>
 
         <p>
@@ -492,7 +503,7 @@
         <p>
           <attr>indexes</attr> each category can behave differently given an
           analysis. This is an array of object describing the different scenarios.
-          Consider the following JSON:
+          Consider the following <i>JSON</i>:
           <pre>
 [
   {
@@ -533,7 +544,8 @@
 
         <p>
           <attr>range</attr> the amount of sliders to restrict the range of a
-          dataset. This can be one of <code>null, single, double</code>.
+          dataset. This can be one of <code>null</code>, <code>single</code> or
+          <code>double</code>.
         </p>
 
         <p>
@@ -641,7 +653,7 @@
       <p>
         A dataset is, initially, the combination between a dataset and a
         geography - plus some specific attributes and a collection of files.
-	  </p>
+      </p>
 
       <p>
         <attr>category_id</attr> The UUID of the category describing the
@@ -679,17 +691,18 @@
       <p>
         <attr>configuration</attr> of a file may include:
 
-		<ul>
-		  <li>
-			<code>column</code> - The name of the CSV column that will be used to
-			match the GEOJSON feature (see <code>file->configuration->key</code>)
-		  </li>
+        <ul>
+          <li>
+            <code>column</code> The name of the CSV column that will be used to
+            match the GEOJSON feature <br>
+            (see <code>file -> configuration -> key</code>)
+          </li>
 
-		  <li>
-			<code>column_name</code> - The name of the CSV column which contains
-			the "human readable version" of the feature
-		  </li>
-		</ul>
+          <li>
+            <code>column_name</code> The name of the CSV column which contains
+            the "human readable version" of the feature
+          </li>
+        </ul>
       </p>
 
       <p>
@@ -724,16 +737,16 @@
       </p>
 
       <p>
-		<attr>Configuration</attr> of a file is a <i>JSON document</i>
-		optionally containing:
+        <attr>Configuration</attr> of a file is a <i>JSON document</i>
+        optionally containing:
 
-		<ul>
-		  <li>
-			<code>key</code> - an identifier in the GEOJSON that
-			references to a unique value in a column of the CSV
-			(see <code>dataset->configuration->column</code>)
-		  </li>
-		</ul>
+        <ul>
+          <li>
+            <code>key</code> an identifier in the GEOJSON that references to a
+            unique value in a column of the CSV <br>
+            (see <code>dataset -> configuration -> column</code>)
+          </li>
+        </ul>
       </p>
     </section>
 
@@ -759,7 +772,8 @@
       </p>
 
       <p>
-        <attr>func</attr> one of <code>null, raster, vectors, csv</code>
+        <attr>func</attr> can be <code>null</code>, <code>raster</code>,
+        <code>vectors</code> or <code>csv</code>
       </p>
     </section>
 
